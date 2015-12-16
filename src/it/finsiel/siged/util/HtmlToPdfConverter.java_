@@ -1,0 +1,89 @@
+package it.finsiel.siged.util;
+
+import it.finsiel.siged.exception.ConversionException;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+
+import javax.xml.transform.Result;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.sax.SAXResult;
+import javax.xml.transform.stream.StreamSource;
+
+import org.apache.fop.apps.Driver;
+import org.apache.log4j.Logger;
+
+import wh2fo.apps.Translator;
+
+
+/**
+ * @author Paolo Spadafora - Digital Highway
+ *  
+ */
+public class HtmlToPdfConverter {
+
+    static Logger logger = Logger.getLogger(HtmlParser.class.getName());
+
+    /**
+     * Converte un file da Html in Pdf, provando ad includere eventuali
+     * immagini.
+     * 
+     * @param File
+     *            html il file in input
+     * @param File
+     *            pdf il file di output
+     * @param File
+     *            tempFolder la cartella temporanea su cui lavorare
+     */
+    public static void convert(File html, File pdf, File tempFolder)
+            throws ConversionException {
+
+        OutputStream out = null;
+        File tmpXml = null;
+        File tmpXsl = null;
+        File tmpXslAtt = null;
+
+        try {
+
+            tmpXml = File.createTempFile("tmp_xml_", ".email", tempFolder);
+            tmpXsl = File.createTempFile("tmp_xsl_", ".email", tempFolder);
+            tmpXslAtt = File
+                    .createTempFile("tmp_xmlAtt_", ".email", tempFolder);
+            Translator t = new Translator(html.getAbsolutePath(), tmpXml
+                    .getAbsolutePath(), tmpXsl.getAbsolutePath(), tmpXslAtt
+                    .getAbsolutePath(), false, false, false);
+            out = new FileOutputStream(pdf);
+
+            Driver driver = new Driver();
+            driver.setRenderer(Driver.RENDER_PDF);
+            driver.setOutputStream(out);
+
+            // XSLT
+            TransformerFactory factory = TransformerFactory.newInstance();
+            Transformer transformer = factory.newTransformer(new StreamSource(
+                    tmpXsl));
+            //input for XSLT transformation
+            Source src = new StreamSource(tmpXml);
+            Result res = new SAXResult(driver.getContentHandler());
+            //Start XSLT transformation and FOP processing
+            transformer.transform(src, res);
+
+        } catch (Exception e) {
+            logger.warn("", e);
+            throw new ConversionException(e);
+        } finally {
+            FileUtil.closeOS(out);
+            if (tmpXml != null)
+                tmpXml.delete();
+            if (tmpXsl != null)
+                tmpXsl.delete();
+            if (tmpXslAtt != null)
+                tmpXslAtt.delete();
+
+        }
+    }
+}
+

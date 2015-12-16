@@ -1,0 +1,86 @@
+#protocollo_registrato {
+	font-size: 90%;
+	margin-top: 8px;
+	color: red;
+}
+
+#link-sezioni input {
+	position: relative;
+	top: -8pt;
+    background-color: white;
+    color: #006666;
+	padding-left: 2px;
+	padding-right: 2px;
+	margin-left: 0;
+	margin-right: 2px;
+	cursor: pointer;
+    border-width: 0px;
+    outline-style: none;
+}
+
+#link-sezioni input.corrente {
+    font-weight: bold;
+    color: #cc3300;
+	/*border-style: solid;
+	border-color: black;
+	border-width: 1px;*/
+}
+
+#link-sezioni a {
+    color: #006666;
+}
+
+#link-sezioni input:hover {
+    color: #cc3300;
+}
+
+#link-sezioni input.obbligatorio {
+    color: #cc3300;
+}
+
+#link-sezioni input.correnteobbligatorio {
+    font-weight: bold;
+    color: #cc3300;
+}
+
+
+#sezioni-protocolli {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+#assegnatari td, #assegnatari th {
+	border-style: solid;
+	border-color: #006666;
+	border-width: 1px;
+	padding-left: 4px;
+	padding-right: 8px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+#protocollo-errori li {
+	color: #cc3300;
+	font-size: 70%;
+}
+
+#messaggi li {
+	color: #cc3300;
+	font-size: 70%;
+}
+
+#oggetto {
+	color: #cc3300;
+	font-size: 10px;
+	
+	}
+	
+.listaOggetti th{
+	background-color: #cccccc;
+	text-align: center;
+	}
+	
+.listaOggetti td{
+	background-color: #cccccc;
+	
+	}

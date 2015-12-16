@@ -1,0 +1,191 @@
+#layout {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+}
+
+#layout td {
+	padding: 0px;
+}
+
+#header {
+	border-bottom: 5px #cccccc solid;
+}
+
+#layout #sidebar {
+    width: 214px;
+}
+
+#layout #body {
+    padding: 6px;
+    padding-left: 12px;
+    min-width: 480px;
+    /*float: right;*/
+}
+
+#header, #footer, #sidebar, #body {
+    vertical-align: top;
+}
+
+#header span {
+    float: left;
+	font-family: "verdana", sans-serif;
+}
+
+#header span.title {
+	font-size: 200%;
+	font-wight: bold;
+	color: #0d0089;
+	margin-left: 8px;
+}
+
+#header span.aoo {
+	font-size: 80%;
+}
+
+#header span.account {
+    float: right;
+	text-align: right;
+	font-size: 80%;
+	font-family: verdana, sans-serif;
+	color: #000000;
+	background-color: #cccccc;
+	padding: 4px;
+    padding-left: 4px;
+	border: 1px #006666 solid;
+	margin-left: 0px;
+}
+
+#header img {
+    float: left;
+    margin-top: 0px;
+}
+
+#body * {
+	font-family: verdana, sans-serif;
+	color: #000000;
+	font-size: 100%
+}
+
+#body hr {
+
+	color: #006666;
+	size: 3px solid;
+
+}
+
+#body a {
+	font-family: verdana, sans-serif;
+	color: #006666;
+	font-size: 100%;
+}
+
+#body a:hover {
+	font-family: verdana, sans-serif;
+	color: #cc3300;
+	font-size: 100%;
+}
+
+#body label, #body input, #body select, #body textarea, #body span {
+	font-size: 80%;
+}
+
+#body p {
+	vertical-align: middle;
+	margin-top: 1px;
+	margin-bottom: 2px;
+}
+
+#body table {
+	border-collapse: collapse;
+}
+
+#body td, #body th {
+	vertical-align: top;
+	text-align: left;
+	padding: 2px;
+	padding-top:1 px;
+}
+
+#body td.label {
+	text-align: right;
+}
+
+#body td.labelEvidenziata {
+	text-align: right;
+	background-color: silver;	
+}
+
+#body select.evidenziato {
+	color: red;	
+}
+
+#body input.evidenziato {
+	color: red;	
+}
+
+#body td.subtable {
+	padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+input.button {
+    background-color: #cccccc;
+    color: #333333;
+    padding: 0;
+    border-width: 1px;
+	margin-right: 6px;
+}
+
+input.submit {
+    background-color: #006666;
+    color: white;
+    padding: 0;
+	margin-right: 6px;
+    border-width: 1px;
+}
+
+input.obbligatorio, select.obbligatorio, textarea.obbligatorio {
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #006666;
+}
+
+span.title {
+	position: relative;
+	top: -8pt;
+	background-color: white;
+	font-family: verdana, sans-serif;
+	color: #006666;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+span.obbligatorio {
+	color: red;
+}
+
+span.evidenziato{
+	color: red;
+}
+
+div.sezione {
+	margin-top: 18px;
+	margin-bottom: 12px;
+	padding: 8px;
+	padding-top: 0px;
+	border-style: solid;
+	border-color: #006666;
+	border-width: 1px;
+}
+#content {
+	overflow: auto;
+	height: 500px;
+	max-height: 500px;
+	margin-left: 2px;
+	background-color: #FFFFFF;
+}
