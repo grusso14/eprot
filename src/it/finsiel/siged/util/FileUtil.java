@@ -403,44 +403,61 @@ public final class FileUtil {
         try {
             is = new BufferedInputStream(new FileInputStream(filePath),
                     FileConstants.BUFFER_SIZE);
-            if (is != null) {
-                sha = MessageDigest.getInstance(FileConstants.SHA);
-                byte[] messaggio = new byte[FileConstants.BUFFER_SIZE];
-                int len = 0;
-                while ((len = is.read(messaggio)) != -1) {
-                    sha.update(messaggio, 0, len);
-                }
-                byte[] impronta = sha.digest();
-                // convertiamo in stringa l'array di byte
-                int size = impronta.length;
-                StringBuffer buf = new StringBuffer();
-                int unsignedValue = 0;
-                String strUnsignedValue = null;
-                for (int i = 0; i < size; i++) {
-                    // I letterali interi sono stringhe di cifre ottali,
-                    // decimali o esadecimali.
-                    // L'inizio della costante serve a dichiarare la base del
-                    // numero,
-                    // uno zero iniziale indica la base otto, 0x o 0X indica la
-                    // base 16
-                    // e niente indica la notazione decimale.
-                    // Ad esempio il numero 15 in base dieci puï¿½ essere
-                    // rappresentato come:
-                    // 15 in notazione decimale
-                    // 017 in notazione ottale
-                    // 0xf oppure 0XF in notazione esadecimale
+//            if (is != null) {
+//                sha = MessageDigest.getInstance(FileConstants.SHA);
+//                byte[] messaggio = new byte[FileConstants.BUFFER_SIZE];
+//                int len = 0;
+//                while ((len = is.read(messaggio)) != -1) {
+//                    sha.update(messaggio, 0, len);
+//                }
+//                byte[] impronta = sha.digest();
+//                // convertiamo in stringa l'array di byte
+//                int size = impronta.length;
+//                StringBuffer buf = new StringBuffer();
+//                int unsignedValue = 0;
+//                String strUnsignedValue = null;
+//                for (int i = 0; i < size; i++) {
+//                    // I letterali interi sono stringhe di cifre ottali,
+//                    // decimali o esadecimali.
+//                    // L'inizio della costante serve a dichiarare la base del
+//                    // numero,
+//                    // uno zero iniziale indica la base otto, 0x o 0X indica la
+//                    // base 16
+//                    // e niente indica la notazione decimale.
+//                    // Ad esempio il numero 15 in base dieci puï¿½ essere
+//                    // rappresentato come:
+//                    // 15 in notazione decimale
+//                    // 017 in notazione ottale
+//                    // 0xf oppure 0XF in notazione esadecimale
+//
+//                    // trasformiamo l'intero in unsigned:
+//                    unsignedValue = ((int) impronta[i]) & 0xff;
+//                    strUnsignedValue = Integer.toHexString(unsignedValue);
+//                    if (strUnsignedValue.length() == 1)
+//                        buf.append("0");
+//                    buf.append(strUnsignedValue);ù
+            byte[] buffer = new byte[1024];
+            MessageDigest complete = MessageDigest.getInstance("SHA-1");
+            int numRead;
 
-                    // trasformiamo l'intero in unsigned:
-                    unsignedValue = ((int) impronta[i]) & 0xff;
-                    strUnsignedValue = Integer.toHexString(unsignedValue);
-                    if (strUnsignedValue.length() == 1)
-                        buf.append("0");
-                    buf.append(strUnsignedValue);
+            do {
+                numRead = is.read(buffer);
+                if (numRead > 0) {
+                    complete.update(buffer, 0, numRead);
                 }
-                strImpronta = buf.toString();
+            } while (numRead != -1);
+
+            is.close();
+            byte[] digest=complete.digest();
+            for (int i=0; i < digest.length; i++) {
+            	strImpronta += Integer.toString( ( digest[i] & 0xff ) + 0x100, 16).substring( 1 );
+            }
+           
+            
+              
                 logger.debug("Impronta calcolata:" + strImpronta);
 
-            }
+            
         } catch (IOException io) {
             logger.error("Errore nella generazione dell'impronta:", io);
             errors.add("fileFormUpload", new ActionMessage("errore_impronta"));
@@ -450,6 +467,8 @@ public final class FileUtil {
         }
         return strImpronta;
     }
+    
+   
 
     /**
      * Utility per cambiare l'estensione ad un file.

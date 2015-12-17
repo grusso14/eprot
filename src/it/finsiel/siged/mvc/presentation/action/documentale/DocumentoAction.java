@@ -84,26 +84,27 @@ public class DocumentoAction extends Action {
             // stesso
             String tempFilePath = FileUtil.leggiFormFilePrincipale(form,
                     request, errors);
+         
             String impronta = FileUtil.calcolaDigest(tempFilePath, errors);
             if (errors.isEmpty()) {
-                try {
-                    VerificaFirma
-                            .verificaFileFirmato(tempFilePath, contentType);
-                } catch (DataException e) {
-                    errors.add("allegati", new ActionMessage(
-                            "database.cannot.load"));
-                } catch (CertificatoNonValidoException e) {
-                    errors.add("allegati", new ActionMessage(
-                            "errore.verificafirma.doc.non_valido", e
-                                    .getMessage()));
-                } catch (FirmaNonValidaException e) {
-                    errors.add("allegati", new ActionMessage(
-                            "errore.verificafirma.doc.non_valido", e
-                                    .getMessage()));
-                } catch (CRLNonAggiornataException e) {
-                    errors.add("allegati", new ActionMessage(
-                            "errore.verificafirma.crl_non_aggiornata"));
-                }
+//                try {
+//                    VerificaFirma
+//                            .verificaFileFirmato(tempFilePath, contentType);
+//                } catch (DataException e) {
+//                    errors.add("allegati", new ActionMessage(
+//                            "database.cannot.load"));
+//                } catch (CertificatoNonValidoException e) {
+//                    errors.add("allegati", new ActionMessage(
+//                            "errore.verificafirma.doc.non_valido", e
+//                                    .getMessage()));
+//                } catch (FirmaNonValidaException e) {
+//                    errors.add("allegati", new ActionMessage(
+//                            "errore.verificafirma.doc.non_valido", e
+//                                    .getMessage()));
+//                } catch (CRLNonAggiornataException e) {
+//                    errors.add("allegati", new ActionMessage(
+//                            "errore.verificafirma.crl_non_aggiornata"));
+//                }
                 String username = ((Utente) request.getSession().getAttribute(
                         Constants.UTENTE_KEY)).getValueObject().getUsername();
                 DocumentoVO documento = new DocumentoVO();
