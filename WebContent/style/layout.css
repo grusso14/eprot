@@ -132,11 +132,17 @@
 }
 
 input.button {
-    background-color: #cccccc;
-    color: #333333;
-    padding: 0;
-    border-width: 1px;
+	
+    background: -webkit-linear-gradient(#008040,#009d9d); 
+    background: -o-linear-gradient(#008040,#009d9d); 
+    background: -moz-linear-gradient(#008040,#009d9d); 
+    background: linear-gradient(#008040,#009d9d);    
+    color: white;
+    border: 1px solid #000;
+    border-radius:5px;
+    padding:4px 6px 4px 6px;    
 	margin-right: 6px;
+	font-weight: bold;
 }
 
 input.submit {
