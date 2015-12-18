@@ -20,12 +20,17 @@ div {
 }
 
 input.submit {
-	font-size: 100%;
-    background-color: #f0f0f0;
-    color: black;
-    padding: 0;
-	margin-right: 6px;
-    border-width: 1px;
+    background: -webkit-linear-gradient(#008040,#009d9d); 
+    background: -o-linear-gradient(#008040,#009d9d); 
+    background: -moz-linear-gradient(#008040,#009d9d); 
+    background: linear-gradient(#008040,#009d9d);  
+    color: white;       
+    border: 1px solid #000;
+    border-radius:5px;
+    padding:4px 6px 4px 6px;     
+	margin-right: 5px;    
+	font-weight: bold;
+	
 }
 
 table {
