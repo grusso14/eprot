@@ -1123,7 +1123,7 @@ public class ProtocolloForm extends UploaderForm implements
                 }
             }
             if (dataRic != null && !"".equals(dataRic)) {
-                if (!DateUtil.isDataOra(dataRic)) {
+                if (!DateUtil.isData(dataRic)) {
                     // la data di ricezione deve essere nel formato valido:
                     // gg/mm/aaaa
                     errors.add("dataRicezione", new ActionMessage(
