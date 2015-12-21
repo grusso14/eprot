@@ -21,16 +21,12 @@
   <table id="layout" summary="">
   <tr>
   <td id="header" colspan="2">
-    <span class="title">e-Prot</span>
+    <span class="title">e-Protocollo</span>
     <span class="aoo">
     
      <img  src="C:\Documents and Settings\bosco\Desktop\Logo Interno.gif"/>
     </span>
     <span class="account">
-<%--      Benvenuto: <strong>${UTENTE_KEY.valueObject.fullName}</strong>&nbsp;&nbsp;-->
-<!--      Ufficio: <strong>${UTENTE_KEY.ufficioVOInUso.description}</strong><br />-->
-<!--      Registro: <strong>${UTENTE_KEY.registroVOInUso.descrizioneRegistro}</strong>&nbsp;&nbsp;-->
-<!--      Ultimo protocollo: <strong>${UTENTE_KEY.ultimoProtocollo}</strong>--%>
           AOO: <strong><bean:write name="UTENTE_KEY" property="areaOrganizzativa.description" /></strong>&nbsp;&nbsp;
 	      Benvenuto: <strong><bean:write name="UTENTE_KEY" property="valueObject.fullName"/></strong>&nbsp;&nbsp;
 	      Ufficio: <strong><bean:write name="UTENTE_KEY" property="ufficioVOInUso.description"/></strong><br />
@@ -43,6 +39,7 @@
     <div id="tabmenu">
       <eprot:tab />
       <html:link styleClass="logout" href="/logoff.do">Logout</html:link>
+      
     </div>
   </td>
   </tr>

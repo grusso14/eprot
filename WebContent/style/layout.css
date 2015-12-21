@@ -5,11 +5,11 @@
 }
 
 #layout td {
-	padding: 0px;
+    padding: 0px;
 }
 
 #header {
-	border-bottom: 5px #cccccc solid;
+    border-bottom: 5px #cccccc solid;
 }
 
 #layout #sidebar {
@@ -29,32 +29,51 @@
 
 #header span {
     float: left;
-	font-family: "verdana", sans-serif;
+    font-family: "verdana", sans-serif;
 }
 
 #header span.title {
-	font-size: 200%;
-	font-wight: bold;
-	color: #0d0089;
-	margin-left: 8px;
+    font-size: 200%;
+    font-wight: bold;
+    color: #0d0089;
+    margin-left: 8px;
 }
 
 #header span.aoo {
-	font-size: 80%;
+    font-size: 80%;
 }
 
+
+
 #header span.account {
+    width : 100%;
     float: right;
-	text-align: right;
-	font-size: 80%;
-	font-family: verdana, sans-serif;
-	color: #000000;
-	background-color: #cccccc;
-	padding: 4px;
+    text-align: right;    
+    font-size: 70%;
+    font-family: "verdana", sans-serif;
+    color: #000000;
+    background-color: #F1F1F1;
+    padding: 4px;
     padding-left: 4px;
-	border: 1px #006666 solid;
-	margin-left: 0px;
+    border-bottom: 3px #BBBBBB solid;
+    margin-left: 0px;
+    background-image:url("../images/logo/gradientHeader.png");    
+    background-repeat: repeat-x;
 }
+
+
+/*#header span.account {
+    float: right;
+    text-align: right;
+    font-size: 80%;
+    font-family: verdana, sans-serif;
+    color: #000000;
+    background-color: #cccccc;
+    padding: 4px;
+    padding-left: 4px;
+    border: 1px #006666 solid;
+    margin-left: 0px;
+}*/
 
 #header img {
     float: left;
@@ -62,68 +81,68 @@
 }
 
 #body * {
-	font-family: verdana, sans-serif;	
-	font-size: 100%
+    font-family: verdana, sans-serif;   
+    font-size: 100%
 }
 
 #body hr {
 
-	color: #006666;
-	size: 3px solid;
+    color: #006666;
+    size: 3px solid;
 
 }
 
 #body a {
-	font-family: verdana, sans-serif;
-	color: #006666;
-	font-size: 100%;
+    font-family: verdana, sans-serif;
+    color: #006666;
+    font-size: 100%;
 }
 
 #body a:hover {
-	font-family: verdana, sans-serif;	
-	font-size: 100%;
+    font-family: verdana, sans-serif;   
+    font-size: 100%;
 }
 
 #body label, #body input, #body select, #body textarea, #body span {
-	font-size: 80%;
+    font-size: 80%;
 }
 
 #body p {
-	vertical-align: middle;
-	margin-top: 1px;
-	margin-bottom: 2px;
+    vertical-align: middle;
+    margin-top: 1px;
+    margin-bottom: 2px;
 }
 
 #body table {
-	border-collapse: collapse;
+    border-collapse: collapse;
 }
 
 #body td, #body th {
-	vertical-align: top;
-	text-align: left;
-	padding: 2px;
-	padding-top:1 px;
+    vertical-align: top;
+    text-align: left;
+    padding: 2px;
+    padding-top:1 px;
 }
 
 #body td.label {
-	text-align: right;
+    text-align: right;
 }
 
 #body td.labelEvidenziata {
-	text-align: right;
-	background-color: silver;	
+    text-align: right;
+    background-color: silver;   
 }
 
 #body select.evidenziato {
-	color: red;	
+    color: red; 
 }
 
 #body input.evidenziato {
-	color: red;	
+    color: red; 
 }
 
 #body td.subtable {
-	padding: 0;
+    padding: 0;
 }
 
 .hidden {
@@ -131,7 +150,7 @@
 }
 
 input.button {
-	
+    
     background: -webkit-linear-gradient(#008040,#009d9d); 
     background: -o-linear-gradient(#008040,#009d9d); 
     background: -moz-linear-gradient(#008040,#009d9d); 
@@ -140,13 +159,13 @@ input.button {
     border: 1px solid #000;
     border-radius:5px;
     padding:4px 6px 4px 6px;    
-	margin-right: 6px;
-	font-weight: bold;
+    margin-right: 6px;
+    font-weight: bold;
 }
 
 input.submit {
-	
-	background: -webkit-linear-gradient(#008040,#009d9d); 
+    
+    background: -webkit-linear-gradient(#008040,#009d9d); 
     background: -o-linear-gradient(#008040,#009d9d); 
     background: -moz-linear-gradient(#008040,#009d9d); 
     background: linear-gradient(#008040,#009d9d);
@@ -154,8 +173,8 @@ input.submit {
     border-radius:5px;
     padding:4px 6px 4px 6px;
     color: white;    
-	margin-right: 6px;
-	font-weight: bold;
+    margin-right: 6px;
+    font-weight: bold;
     
 }
 
@@ -167,36 +186,36 @@ input.obbligatorio, select.obbligatorio, textarea.obbligatorio {
 }
 
 span.title {
-	position: relative;
-	top: -8pt;
-	background-color: white;
-	font-family: verdana, sans-serif;
-	color: #006666;
-	padding-left: 4px;
-	padding-right: 4px;
+    position: relative;
+    top: -8pt;
+    background-color: white;
+    font-family: verdana, sans-serif;
+    color: #006666;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 span.obbligatorio {
-	color: red;
+    color: red;
 }
 
 span.evidenziato{
-	color: red;
+    color: red;
 }
 
 div.sezione {
-	margin-top: 18px;
-	margin-bottom: 12px;
-	padding: 8px;
-	padding-top: 0px;
-	border-style: solid;
-	border-color: #006666;
-	border-width: 1px;
+    margin-top: 18px;
+    margin-bottom: 12px;
+    padding: 8px;
+    padding-top: 0px;
+    border-style: solid;
+    border-color: #006666;
+    border-width: 1px;
 }
 #content {
-	overflow: auto;
-	height: 500px;
-	max-height: 500px;
-	margin-left: 2px;
-	background-color: #FFFFFF;
+    overflow: auto;
+    height: 500px;
+    max-height: 500px;
+    margin-left: 2px;
+    background-color: #FFFFFF;
 }
