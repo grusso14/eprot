@@ -54,7 +54,7 @@ $().ready(function(){
 		</label>&nbsp;: 
 		
 		<logic:greaterThan name="protocolloForm" property="protocolloId" value="0">
-			<html:checkbox property="riservato" styleId="protocolloRiservato" disabled="true" />
+			<html:checkbox property="riservato" styleId="protocolloRiservato" disabled="false" />
 		</logic:greaterThan> 
 		
 		<logic:equal name="protocolloForm" property="protocolloId" value="0">
@@ -78,7 +78,7 @@ $().ready(function(){
 				for="dataRicezione"><bean:message
 				key="protocollo.documento.ricevuto" /> </label>:</td>
 			<td><html:text styleClass="text" property="dataRicezione" styleId="dataRicezione" size="14"	maxlength="10" /> 
-			<eprot:calendar	textField="dataRicezione" hasTime="true"/>
+			<eprot:calendar	textField="dataRicezione" hasTime="false"/>
 			</td>
 		</logic:equal>
 
