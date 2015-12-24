@@ -16,10 +16,9 @@
 
 <table id="layout" summary="">
 <tr>
-<td>
-  <div id="header">
-  	<img title="eProt" align="center" border="0" src="<html:rewrite page='/images/logo/logoEprot.gif'/>">
-      <!-- span class="title">e-Prot</span -->
+  <td>
+  <div id="header" style="border: 1px solid #000; border-radius:5px;">
+  	<img  title="eProtrotocollo" align="center" border="0" src="<html:rewrite page='/images/logo/logoEprot.gif'/>">    
   </div>  
   <hr />
   
@@ -31,47 +30,49 @@
 
 	<html:errors/>
 
+
 	<html:form action="/logon.do" focus="username">
-<table>
-  <tr>
-    <th align="right">
-      <label for="username"><bean:message key="prompt.username"/></label>:
-    </th>
-    <td>
-      <html:text styleId="username" property="username" size="18" maxlength="32"/>
-    </td>
-  </tr>
-
-  <tr>
-    <th align="right">
-      <label for="password"><bean:message key="prompt.password"/></label>:
-    </th>
-    <td>
-      <html:password styleId="password" property="password" size="18" maxlength="20" redisplay="false" />
-    </td>
-  </tr>
-  <logic:notEmpty scope="request" name="mostra_forzatura">
-  <tr>
-    <th align="right">
-      <label for="forzatura"><bean:message key="prompt.forzatura"/></label>:
-    </th>
-    <td>
-      <html:checkbox styleId="forzatura" property="forzatura" />
-    </td>
-  </tr>
-  </logic:notEmpty>
-  <tr><td> </td></tr>
-  <tr>
-    <td> </td>
-    <td>
-      <html:submit styleClass="submit" property="login" value="Log in"/>
-      <html:reset styleClass="submit" />
-    </td>
-  </tr>
-</table>
-</td>
+	   <div id="header" style="border: 1px solid #000; border-radius:5px;">
+		<table>
+		  <tr>
+		    <th align="right">
+		      <label for="username"><bean:message key="prompt.username"/></label>:
+		    </th>
+		    <td>
+		      <html:text styleId="username" property="username" size="18" maxlength="32"/>
+		    </td>
+		  </tr>
+		
+		  <tr>
+		    <th align="right">
+		      <label for="password"><bean:message key="prompt.password"/></label>:
+		    </th>
+		    <td>
+		      <html:password styleId="password" property="password" size="18" maxlength="20" redisplay="false" />
+		    </td>
+		  </tr>
+		  <logic:notEmpty scope="request" name="mostra_forzatura">
+		  <tr>
+		    <th align="right">
+		      <label for="forzatura"><bean:message key="prompt.forzatura"/></label>:
+		    </th>
+		    <td>
+		      <html:checkbox styleId="forzatura" property="forzatura" />
+		    </td>
+		  </tr>
+		  </logic:notEmpty>
+		  <tr><td> </td></tr>
+		  <tr>
+		    <td> </td>
+		    <td>
+		      <html:submit styleClass="submit" property="login" value="Log in"/>
+		      <html:reset styleClass="submit" />
+		    </td>
+		  </tr>
+		</table>
+  </td>
 </tr>
-</table>
-
+		</table>
+       </div> 
 </html:form>
 </html:html>
