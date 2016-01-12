@@ -57,7 +57,7 @@
     padding-left: 4px;
     border-bottom: 3px #BBBBBB solid;
     margin-left: 0px;
-    background-image:url("../images/logo/gradientHeader.png");    
+    /* background-image:url("../images/logo/gradientHeader.png");    */ 
     background-repeat: repeat-x;
 }
 

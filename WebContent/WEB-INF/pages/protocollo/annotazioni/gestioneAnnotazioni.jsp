@@ -10,10 +10,10 @@
 <html:form action="/annotazioniProtocollo.do">
 
 <div>
-	<jsp:include page="/WEB-INF/subpages/protocollo/anagrafica/annotazioni/testataGestioneAnnotazioni.jsp" />
+	<jsp:include page="/WEB-INF/subpages/protocollo/annotazioni/testataGestioneAnnotazioni.jsp" />
 </div>
 <div>
-	<jsp:include page="/WEB-INF/subpages/protocollo/anagrafica/annotazioni/listaAnnotazioni.jsp" />
+	<jsp:include page="/WEB-INF/subpages/protocollo/annotazioni/listaAnnotazioni.jsp" />
 </div>
 
 </html:form>

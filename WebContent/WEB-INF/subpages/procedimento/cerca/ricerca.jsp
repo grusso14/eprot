@@ -9,7 +9,7 @@
 <eprot:page title="Ricerca procedimenti">
 
 <html:form action="/page/procedimento/ricerca.do">
-<jsp:include page="/WEB-INF/subpages/procedimento/cerca.jsp"/>
+<jsp:include page="/WEB-INF/subpages/procedimento/cerca/cerca.jsp"/>
 </html:form>
 
 </eprot:page>

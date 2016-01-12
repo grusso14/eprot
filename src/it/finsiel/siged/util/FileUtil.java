@@ -436,8 +436,8 @@ public final class FileUtil {
 //                    if (strUnsignedValue.length() == 1)
 //                        buf.append("0");
 //                    buf.append(strUnsignedValue);ù
-            byte[] buffer = new byte[1024];
-            MessageDigest complete = MessageDigest.getInstance("SHA-1");
+            byte[] buffer = new byte[FileConstants.BUFFER_SIZE];
+            MessageDigest complete = MessageDigest.getInstance(FileConstants.SHA);
             int numRead;
 
             do {
@@ -452,9 +452,6 @@ public final class FileUtil {
             for (int i=0; i < digest.length; i++) {
             	strImpronta += Integer.toString( ( digest[i] & 0xff ) + 0x100, 16).substring( 1 );
             }
-           
-            
-              
                 logger.debug("Impronta calcolata:" + strImpronta);
 
             

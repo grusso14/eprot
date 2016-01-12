@@ -67,8 +67,9 @@
 	<logic:match name="sezioneVisualizzata" value="Procedimenti">
     	<jsp:include page="/WEB-INF/subpages/protocollo/common/datiProcedimenti.jsp" />
 	</logic:match>
+	
+<div>
 </div>
-
 <div>
 
 <logic:equal name="protocolloForm" property="protocolloId" value="0">
@@ -78,6 +79,12 @@
 
 
 <logic:notEqual name="protocolloForm" property="protocolloId" value="0">
+
+   <div class="sezione"><span class="title"><strong><bean:message
+	key="protocollo.motivazione" /></strong></span>
+		<html:textarea property="motivazione" cols="30" styleId="textareaOggettoGenerico"/>
+	</div>
+
   <html:submit styleClass="submit" property="salvaAction" value="Salva" alt="Salva protocollo" />
   <html:submit styleClass="submit" property="annullaAction" value="Annulla" alt="Annulla l'operazione" />
 </logic:notEqual> 
