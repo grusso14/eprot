@@ -46,19 +46,16 @@
 
 
 #header span.account {
-    width : 100%;
     float: right;
-    text-align: right;    
-    font-size: 70%;
-    font-family: "verdana", sans-serif;
+    text-align: right;
+    font-size: 80%;
+    font-family: verdana, sans-serif;
     color: #000000;
-    background-color: #F1F1F1;
+    background-color: #cccccc;
     padding: 4px;
     padding-left: 4px;
-    border-bottom: 3px #BBBBBB solid;
-    margin-left: 0px;
-    /* background-image:url("../images/logo/gradientHeader.png");    */ 
-    background-repeat: repeat-x;
+    border: 1px #006666 solid;
+    margin-left: 0px;    
 }
 
 
