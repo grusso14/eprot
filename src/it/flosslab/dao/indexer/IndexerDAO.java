@@ -127,7 +127,7 @@ public class IndexerDAO {
 
 		//long start = new Date().getTime();
 		// start indexing
-		index(writer, new File(resourcelocation));
+	//index(writer, new File(resourcelocation));
 		writer.optimize();
 		writer.close();
 		//long end = new Date().getTime();

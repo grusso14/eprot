@@ -313,7 +313,7 @@ public class ContaProtocolloDAOjdbc implements ContaProtocolloDAO{
 		                if (key.toString().indexOf("LIKE") > 0) {
 		                    pstmt
 		                            .setString(indiceQuery, value.toString()
-		                                    + "%");
+		                                    );
 		                } else {
 		                    pstmt.setString(indiceQuery, value.toString());
 		                }

@@ -18,6 +18,9 @@ public class MenuDAOjdbc implements MenuDAO {
 
     private final static String SELECT_PERMESSI = "SELECT COUNT(*) FROM permessi_utente WHERE utente_id = ? AND ufficio_id = ? AND menu_id = ?";
 
+    
+    private final static String SELECT_PERMESSI_LETTURA ="SELECT COUNT(*) FROM PERMESSI_LETTURA_FUNZIONE WHERE user_id = ?  AND menu_id = ?";
+    
     static Logger logger = Logger.getLogger(MenuDAOjdbc.class.getName());
 
     private JDBCManager jdbcMan = new JDBCManager();
@@ -71,6 +74,17 @@ public class MenuDAOjdbc implements MenuDAO {
             rs = pstmt.executeQuery();
             if (rs.next()) {
                 enabled = rs.getInt(1) == 1;
+            }
+            if(!enabled){
+            	jdbcMan.closeAll(rs, pstmt, connection);
+            	connection = jdbcMan.getConnection();
+            	pstmt = connection.prepareStatement(SELECT_PERMESSI_LETTURA);
+                pstmt.setInt(1, utenteId);
+                pstmt.setInt(2, menuId);
+                rs = pstmt.executeQuery();
+                if (rs.next()) {
+                    enabled = rs.getInt(1) == 1;
+                }
             }
         } catch (Exception e) {
             logger.error("Load Permission ", e);

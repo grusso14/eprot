@@ -12,6 +12,7 @@ public class Menu {
     private Menu parent;
 
     private SortedMap children = new TreeMap();
+    
 
     public Menu(MenuVO valueObject) {
         this.valueObject = valueObject;

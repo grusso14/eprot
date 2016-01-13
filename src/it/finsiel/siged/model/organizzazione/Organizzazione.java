@@ -66,6 +66,8 @@ public class Organizzazione {
         return (Menu) menuMapByLink.get(link);
     }
 
+    // TODO: modificare mapping 2->141 ...  
+    // link test localhost:8080/eprot/page/protocollo/ingresso/documento.do?downloadDocumentoPrincipale=13_29_50_360_Mpdf831NoEuro.pdf
     public void addMenu(Menu menu) {
         this.menuMap.put(menu.getValueObject().getId(), menu);
         String link = menu.getValueObject().getLink();
