@@ -497,12 +497,17 @@ public class EmailDAOjdbc implements EmailDAO {
                 isTesto.close();
                 vo.setTestoMessaggio(new String(bosTesto.toByteArray()));
                 bosTesto.close();
-                InputStream isSegnatura = rs.getBinaryStream("segnatura");
-                ByteArrayOutputStream bosSegnatura = new ByteArrayOutputStream();
-                FileUtil.writeFile(isTesto, bosSegnatura);
-                isSegnatura.close();
-                vo.setSegnatura(new String(bosSegnatura.toByteArray()));
-                bosSegnatura.close();
+                
+                
+                // Dobbiamo capire a cosa serve ???????
+                //InputStream isSegnatura = rs.getBinaryStream("segnatura");
+                //ByteArrayOutputStream bosSegnatura = new ByteArrayOutputStream();
+                //FileUtil.writeFile(isTesto, bosSegnatura);
+                //isSegnatura.close();
+                //vo.setSegnatura(new String(bosSegnatura.toByteArray()));
+                //bosSegnatura.close();
+                //------------------------------------------------------------
+                
                 vo.setReturnValue(ReturnValues.FOUND);
             } else {
                 vo.setReturnValue(ReturnValues.NOT_FOUND);
