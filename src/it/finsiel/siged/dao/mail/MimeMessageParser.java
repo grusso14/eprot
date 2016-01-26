@@ -182,6 +182,7 @@ public class MimeMessageParser {
      */
     private static void gestisciBodyAsText(String part, MessaggioEmailEntrata pe) {
         pe.getEmail().setTestoMessaggio(part);
+        pe.getEmail().setContentType("text/plain");
     }
 
     /*

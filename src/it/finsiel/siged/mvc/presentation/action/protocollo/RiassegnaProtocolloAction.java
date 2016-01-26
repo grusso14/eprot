@@ -281,7 +281,7 @@ public class RiassegnaProtocolloAction extends ProtocolloAction {
                             .getValueObject();
                     if (ass.getStato() != 'S') {
                         assegnatario.setStatoAssegnazione(ass.getStato());
-                    } else if (form.getRiservato()
+                    } else if (form.isRiservato()
                             || (uff.isAccettazioneAutomatica() && ass
                                     .getUtenteId() > 0)) {
                         assegnatario.setStatoAssegnazione('A');

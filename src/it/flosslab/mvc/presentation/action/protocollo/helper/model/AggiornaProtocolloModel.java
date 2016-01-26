@@ -67,7 +67,7 @@ public class AggiornaProtocolloModel {
 	            ProtocolloVO protocollo) {
 	        protocollo.setId(form.getProtocolloId());
 	        protocollo.setTipoDocumentoId(form.getTipoDocumentoId());
-	        protocollo.setRiservato(form.getRiservato());
+	        protocollo.setRiservato(form.isRiservato());
 	        Date dataDoc = DateUtil.toDate(form.getDataDocumento());
 	        if (dataDoc != null) {
 	            protocollo.setDataDocumento(new java.sql.Date(dataDoc.getTime()));

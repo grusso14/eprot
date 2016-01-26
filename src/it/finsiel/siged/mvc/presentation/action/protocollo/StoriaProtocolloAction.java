@@ -58,7 +58,7 @@ public class StoriaProtocolloAction extends Action {
                         .getAssegnatarioPerCompetenza(pF.getProtocolloId());
                 String assegnatario;
                 String uteAssegnatario = "";
-                if (!pF.getRiservato()) {
+                if (!pF.isRiservato()) {
                     Organizzazione org = Organizzazione.getInstance();
                     assegnatario = org.getUfficio(
                             assVO.getUfficioAssegnatarioId()).getPath();

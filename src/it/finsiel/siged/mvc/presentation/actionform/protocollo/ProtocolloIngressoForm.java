@@ -316,7 +316,7 @@ public final class ProtocolloIngressoForm extends ProtocolloForm {
                 // ci deve essere almeno un assegnatario
                 errors.add("assegnatari", new ActionMessage(
                         "assegnatari_obbligatorio"));
-            } else if (getRiservato()) {
+            } else if (isRiservato()) {
                 // se il flag riservato e' selezionato ci deve essere solo un
                 // assegnatario per competenza e deve essere un utente
                 if (getAssegnatari().size() == 1) {

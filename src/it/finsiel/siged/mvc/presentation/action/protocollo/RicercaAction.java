@@ -553,7 +553,7 @@ public class RicercaAction extends Action {
             sqlDB.put("p.DATA_RICEZIONE <= ?", dataRicevutoA);
         }
         if (rForm.getOggetto() != null && !"".equals(rForm.getOggetto())) {
-            sqlDB.put("p.TEXT_OGGETTO LIKE ? ", "%"+ rForm.getOggetto()+"%");
+            sqlDB.put("UPPER(p.TEXT_OGGETTO) LIKE ? ", "%"+ rForm.getOggetto().toUpperCase()+"%");
         }
         if (rForm.getProgressivoFascicolo() != null
                 && !"".equals(rForm.getProgressivoFascicolo())) {

@@ -58,7 +58,8 @@ $().ready(function(){
 		</logic:greaterThan> 
 		
 		<logic:equal name="protocolloForm" property="protocolloId" value="0">
-			<html:checkbox property="riservato" styleId="protocolloRiservato" disabled="false" />
+			<html:checkbox property="riservato" styleId="protocolloRiservato" />
+			<html:hidden property="riservato"  styleId="protocolloRiservato" value="false"/>
 		</logic:equal></td>
 	</tr>
 	<tr>

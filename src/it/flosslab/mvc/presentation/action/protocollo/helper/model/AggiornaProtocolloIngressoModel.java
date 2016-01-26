@@ -108,7 +108,7 @@ public class AggiornaProtocolloIngressoModel extends AggiornaProtocolloModel {
                     if (ass.getStato() != 'S'
                             && protocollo.getProtocollo().getId().intValue() > 0) {
                         assegnatario.setStatoAssegnazione(ass.getStato());
-                    } else if (form.getRiservato()
+                    } else if (form.isRiservato()
                             || (uff.isAccettazioneAutomatica() && ass
                                     .getUtenteId() > 0)) {
                         assegnatario.setStatoAssegnazione('A');

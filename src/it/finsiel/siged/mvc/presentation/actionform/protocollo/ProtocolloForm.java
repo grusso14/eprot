@@ -450,14 +450,14 @@ public class ProtocolloForm extends UploaderForm implements
      * @return Returns the oggetto.
      */
     public boolean isDocumentoRiservato() {
-        if (!getRiservato() || isModificabile())
+        if (!isRiservato() || isModificabile())
             return false;
         else
             return true;
     }
 
     public String getOggetto() {
-        if (!getRiservato() || isModificabile() || isDocumentoVisibile()) {
+        if (!isRiservato() || isModificabile() || isDocumentoVisibile()) {
            if(null == this.oggettoGenerico || "".equals(this.oggettoGenerico)){   //TODO riverificare il funzionamento ed ottimizzarne la gestione
             	return this.oggetto;
            }else{
@@ -687,7 +687,7 @@ public class ProtocolloForm extends UploaderForm implements
     /**
      * @return Returns the riservato.
      */
-    public boolean getRiservato() {
+    public boolean isRiservato() {
         return riservato;
     }
 

@@ -16,8 +16,7 @@
       </html:select>
 		&nbsp;&nbsp;
 		<label for="protocolloRiservato"><bean:message key="protocollo.mittente.riservato"/></label>&nbsp;:
-		<html:checkbox property="riservato" styleId="protocolloRiservato" disabled="true" />
-
+		<html:checkbox property="riservato" styleId="protocolloRiservato"  />
     </td>
   </tr>
   <tr>
