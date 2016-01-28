@@ -115,7 +115,7 @@ public class ContaProtocolloDAOjdbc implements ContaProtocolloDAO{
         ResultSet rs = null;
         int numeroProtocolliAssegnati = 0;
 
-        String strQuery = "SELECT count (p.protocollo_id) "
+        String strQuery = "SELECT COUNT(*) FROM (SELECT distinct (p.protocollo_id) "
                 + " FROM PROTOCOLLI p, PROTOCOLLO_ASSEGNATARI a "
                 + " WHERE registro_id=? AND stato_protocollo=? AND p.protocollo_id =a.protocollo_id AND ";
         if (annoProtocolloDa > 0) {
@@ -157,7 +157,7 @@ public class ContaProtocolloDAOjdbc implements ContaProtocolloDAO{
             strQuery = strQuery
                     + " utente_assegnatario_id=? AND flag_competente=1 AND STAT_ASSEGNAZIONE=?";
         }
-
+        strQuery +=") as prot";
         try {
             connection = jdbcMan.getConnection();
             pstmt = connection.prepareStatement(strQuery);
