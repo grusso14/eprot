@@ -6,8 +6,8 @@
 
 <html:xhtml />
 <div>
-	<logic:notEmpty name="scaricoForm" property="protocolliScaricoCollection">
-		<display:table class="simple" width="100%" requestURI="/page/protocollo/scarico.do"
+	<logic:notEmpty name="scaricoForm" property="protocolliScaricoCollection" scope="session">
+		<display:table class="simple" width="100%" requestURI="/page/protocollo/dashboard/scarico.do"
 			name="sessionScope.scaricoForm.protocolliScaricoCollection"
 			export="false" sort="list" pagesize="10" id="row">
 			<display:column title="">
