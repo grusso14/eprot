@@ -11,7 +11,7 @@
 	<div>
 	<display:table class="simple" width="100%"
 		name="sessionScope.presaInCaricoForm.protocolliInCaricoCollection"
-		requestURI="/page/protocollo/presaInCarico.do" export="false"
+		requestURI="/page/protocollo/dashboard/assegnati" export="false"
 		sort="list" pagesize="10" id="row">
 		<display:column title="">
 			<input type="checkbox" name="protocolliSelezionati"
